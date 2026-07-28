@@ -25,6 +25,7 @@ export default function FeaturedUniversities() {
     width={70}
     height={70}
     className="rounded-full"
+    style={{ width: "70px", height: "70px" }}
   />
 </div>
 
