@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { universities } from "@/data/universities";
 
 export default function FeaturedUniversities() {
@@ -17,18 +18,23 @@ export default function FeaturedUniversities() {
             href={`/rankings/world/${university.slug}`}
           >
             <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 cursor-pointer">
-
-              <div className="text-5xl text-center mb-4">
-                🎓
-              </div>
+<div className="flex justify-center mb-4">
+  <Image
+    src={university.logo}
+    alt={university.name}
+    width={70}
+    height={70}
+    className="rounded-full"
+  />
+</div>
 
               <h3 className="font-bold text-lg text-center">
                 {university.name}
               </h3>
 
-              <p className="text-gray-600 text-center mt-2">
-                {university.country}
-              </p>
+             <p className="text-gray-600 text-center mt-2">
+  {university.flag} {university.country}
+</p>
 
               <div className="mt-5 text-center">
                 <span className="bg-blue-900 text-white px-4 py-2 rounded-full">

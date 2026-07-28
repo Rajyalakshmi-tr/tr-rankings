@@ -72,7 +72,7 @@ export const universities = [
     slug: "university-of-cambridge",
     name: "University of Cambridge",
     logo: "/logos/cambridge.png",
-    flag: "GB",
+    flag: "🇬🇧",
     country: "United Kingdom",
     city: "Cambridge",
     established: 1209,

@@ -51,7 +51,6 @@ robots: {
   index: true,
   follow: true,
 },
-
 openGraph: {
 
     title:
@@ -94,7 +93,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+<body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
   <Navbar />
 
   <main className="pt-20 flex-1">

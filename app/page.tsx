@@ -1,45 +1,42 @@
 import Link from "next/link";
-
+import FeaturedUniversities from "@/components/FeaturedUniversities";
 
 export default function HomePage() {
 
   return (
-
     <main className="min-h-screen bg-gray-50">
-
 
       {/* Hero Section */}
 
-      <section className="
-      bg-blue-900
-      text-white
-      py-24
-      px-8
-      ">
-
-
-        <div className="max-w-6xl mx-auto">
-
-
-          <h1 className="
-          text-5xl
-          font-bold
-          mb-6
-          ">
+      <section className="bg-gradient-to-r from-sky-700 via-blue-700 to-indigo-700 text-white py-28">
+      <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
             TR World University Rankings
           </h1>
 
-
-          <p className="
-          text-xl
-          max-w-3xl
-          text-gray-200
-          ">
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mt-4">
             Empowering Global Higher Education Through
             Transparent and Trusted Rankings.
           </p>
+{/* Hero Badges */}
+<div className="flex flex-wrap justify-center gap-4 mt-8">
+  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
+    🌍 100+ Countries
+  </div>
 
+  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
+    🏛 2,000+ Universities
+  </div>
 
+  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
+    📊 Trusted Data
+  </div>
+
+  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
+    📅 2026 Edition
+  </div>
+
+</div>
 
           <Link
           href="/rankings/world"
@@ -66,7 +63,34 @@ export default function HomePage() {
       </section>
 
 
+{/* Global Search */}
+<section className="bg-white py-10 px-8">
+  <div className="max-w-4xl mx-auto">
 
+    <h2 className="text-3xl font-bold text-blue-900 text-center mb-6">
+      Search Universities
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Search universities..."
+      className="
+        w-full
+        border
+        border-gray-300
+        rounded-xl
+        px-6
+        py-4
+        text-lg
+        shadow-md
+        focus:outline-none
+        focus:ring-2
+        focus:ring-blue-500
+      "
+    />
+
+  </div>
+</section>
 
 
       {/* About TRKM */}
@@ -112,10 +136,7 @@ export default function HomePage() {
 
 
       {/* Statistics */}
-
-
       <section className="px-8 pb-16">
-
 
         <div className="
         max-w-6xl
@@ -125,45 +146,28 @@ export default function HomePage() {
         gap-6
         ">
 
-
           <StatCard
           number="2000+"
           title="Universities Ranked"
           />
-
 
           <StatCard
           number="100+"
           title="Countries Covered"
           />
 
-
           <StatCard
           number="50+"
           title="Subjects Ranked"
           />
-
-
         </div>
-
-
       </section>
-
-
-
-
-
-
+<FeaturedUniversities />
 
       {/* Ranking Categories */}
 
 
-      <section className="
-      bg-white
-      py-16
-      px-8
-      ">
-
+      <section className="bg-white py-20 px-8">
 
       <div className="max-w-6xl mx-auto">
 
@@ -231,7 +235,7 @@ export default function HomePage() {
       <div className="
       max-w-5xl
       mx-auto
-      bg-blue-900
+      bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600
       text-white
       rounded-xl
       p-10

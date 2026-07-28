@@ -22,63 +22,57 @@ export default function Navbar() {
     ">
 
 
-      <div className="
-      max-w-7xl
-      mx-auto
-      px-6
-      py-4
-      flex
-      justify-between
-      items-center
-      ">
-
+<div className="
+max-w-full
+mx-auto
+px-6
+lg:px-8
+py-4
+flex
+items-center
+justify-between
+">
 
         {/* Logo */}
 
-        <Link
-href="/"
-className="flex items-center gap-3"
+  <Link
+  href="/"
+  className="flex items-center gap-2 mr-8"
 >
-
-<Image
-src="/logo.png"
-alt="TR Rankings Logo"
-width={55}
-height={55}
+  <Image
+  src="/logos/logo.png"
+  alt="TR Rankings Logo"
+  width={70}
+  height={70}
+  priority
+  style={{
+    width: "70px",
+    height: "70px",
+  }}
+  className="rounded-lg"
 />
 
 
-<span className="
-text-2xl
-font-bold
-text-blue-900
-">
-
-TR
-<span className="text-yellow-500">
-Rankings
-</span>
-
-</span>
-
-
+  <span className="text-2xl font-bold text-blue-900">
+    TR<span className="text-yellow-700">Rankings</span>
+  </span>
 </Link>
+
 
 
 
 
         {/* Desktop Menu */}
 
-        <div className="
-        hidden
-        md:flex
-        items-center
-        gap-7
-        font-medium
-        text-gray-700
-        ">
-
-
+<div className="
+hidden
+lg:flex
+items-center
+gap-5
+xl:gap-8
+font-medium
+text-gray-700
+">
           <NavLink href="/">
             Home
           </NavLink>
@@ -129,11 +123,12 @@ Rankings
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="
-          md:hidden
-          text-2xl
-          "
-        >
+  className="
+lg:hidden
+text-3xl
+text-blue-900
+"
+     >
 
           ☰
 
@@ -150,14 +145,14 @@ Rankings
 
       {menuOpen && (
 
-        <div className="
-        md:hidden
-        px-6
-        pb-6
-        space-y-4
-        bg-white
-        ">
-
+<div className="
+lg:hidden
+px-6
+pb-6
+space-y-5
+bg-white
+border-t
+">
 
           <NavLink href="/">
             Home
@@ -226,6 +221,11 @@ return (
 <Link
 href={href}
 className="
+px-2
+py-1
+text-[15px]
+font-medium
+text-gray-700
 hover:text-blue-700
 transition-colors
 "
