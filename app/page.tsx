@@ -1,390 +1,249 @@
 import Link from "next/link";
+import RightSidebar from "@/components/RightSidebar";
+import LatestNews from "@/components/LatestNews";
+import LiveRankingsPreview from "@/components/LiveRankingsPreview";
 import FeaturedUniversities from "@/components/FeaturedUniversities";
 
 export default function HomePage() {
-
   return (
     <main className="min-h-screen bg-gray-50">
+<div className="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row gap-8">
 
-      {/* Hero Section */}
-
+ {/* Main Content */}
+    <div className="flex-1">
+          {/* Hero Section */}
       <section className="bg-gradient-to-r from-sky-700 via-blue-700 to-indigo-700 text-white py-28">
-      <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
             TR World University Rankings
           </h1>
 
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mt-4">
-            Empowering Global Higher Education Through
-            Transparent and Trusted Rankings.
+          <p className="text-xl md:text-2xl text-blue-100 mt-6 max-w-3xl mx-auto">
+            Empowering Global Higher Education Through Transparent and Trusted Rankings.
           </p>
-{/* Hero Badges */}
-<div className="flex flex-wrap justify-center gap-4 mt-8">
-  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
-    🌍 100+ Countries
-  </div>
 
-  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
-    🏛 2,000+ Universities
-  </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-10">
+            <span className="bg-white/20 px-5 py-2 rounded-full">
+              🌍 100+ Countries
+            </span>
 
-  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
-    📊 Trusted Data
-  </div>
+            <span className="bg-white/20 px-5 py-2 rounded-full">
+              🏛 2,000+ Universities
+            </span>
 
-  <div className="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium">
-    📅 2026 Edition
-  </div>
+            <span className="bg-white/20 px-5 py-2 rounded-full">
+              📊 Trusted Data
+            </span>
 
-</div>
+            <span className="bg-white/20 px-5 py-2 rounded-full">
+              📅 2026 Edition
+            </span>
+          </div>
 
           <Link
-          href="/rankings/world"
-          className="
-          inline-block
-          mt-8
-          bg-yellow-500
-          text-blue-900
-          font-bold
-          px-8
-          py-3
-          rounded-lg
-          "
+            href="/rankings/world"
+            className="inline-block mt-10 bg-yellow-500 text-blue-900 font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition"
           >
-
-          Explore World Rankings
-
+            Explore World Rankings
           </Link>
 
-
         </div>
-
-
       </section>
+<LiveRankingsPreview />
+      {/* Search Section */}
+      <section className="bg-white py-16 px-6">
+        <div className="max-w-4xl mx-auto">
 
-
-{/* Global Search */}
-<section className="bg-white py-10 px-8">
-  <div className="max-w-4xl mx-auto">
-
-    <h2 className="text-3xl font-bold text-blue-900 text-center mb-6">
-      Search Universities
-    </h2>
-
-    <input
-      type="text"
-      placeholder="Search universities..."
-      className="
-        w-full
-        border
-        border-gray-300
-        rounded-xl
-        px-6
-        py-4
-        text-lg
-        shadow-md
-        focus:outline-none
-        focus:ring-2
-        focus:ring-blue-500
-      "
-    />
-
-  </div>
-</section>
-
-
-      {/* About TRKM */}
-
-      <section className="py-16 px-8">
-
-
-        <div className="max-w-6xl mx-auto text-center">
-
-
-          <h2 className="
-          text-3xl
-          font-bold
-          text-blue-900
-          ">
-            About TRKM Rankings
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-8">
+            Search Universities
           </h2>
 
+          <form action="/search" method="GET" className="space-y-5">
+            <input
+              type="text"
+              name="q"
+              placeholder="Search universities or countries..."
+              className="w-full border-2 border-blue-500 rounded-xl px-6 py-4 text-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
 
-          <p className="
-          mt-5
-          text-gray-600
-          max-w-4xl
-          mx-auto
-          ">
+            <button
+              type="submit"
+              className="w-full bg-blue-900 text-white py-4 rounded-xl text-lg font-semibold hover:bg-blue-800 transition"
+            >
+              Search
+            </button>
+          </form>
 
-          TRKM evaluates universities using a transparent
-          ranking framework focused on teaching quality,
-          research excellence, global engagement and
-          graduate success.
+        </div>
+      </section>
 
+      {/* About */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+
+          <h2 className="text-4xl font-bold text-blue-900">
+            About TR Rankings
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-600 max-w-4xl mx-auto leading-8">
+            TR Rankings provides transparent, reliable and globally recognised
+            university rankings based on teaching excellence, research impact,
+            international outlook and graduate employability. Our mission is
+            to help students, universities and policymakers make informed
+            decisions through accurate higher education insights.
           </p>
 
-
         </div>
-
-
       </section>
-
-
-
-
-
 
       {/* Statistics */}
-      <section className="px-8 pb-16">
+      <section className="pb-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
 
-        <div className="
-        max-w-6xl
-        mx-auto
-        grid
-        md:grid-cols-3
-        gap-6
-        ">
+          <StatCard number="2000+" title="Universities Ranked" />
+          <StatCard number="100+" title="Countries Covered" />
+          <StatCard number="50+" title="Subjects Ranked" />
+          <StatCard number="1M+" title="Annual Visitors" />
 
-          <StatCard
-          number="2000+"
-          title="Universities Ranked"
-          />
-
-          <StatCard
-          number="100+"
-          title="Countries Covered"
-          />
-
-          <StatCard
-          number="50+"
-          title="Subjects Ranked"
-          />
         </div>
       </section>
-<FeaturedUniversities />
 
-      {/* Ranking Categories */}
+      {/* Featured Universities */}
+      <FeaturedUniversities />
+<LatestNews />
+      {/* Categories */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
 
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
+            Explore Rankings
+          </h2>
 
-      <section className="bg-white py-20 px-8">
+          <div className="grid md:grid-cols-3 gap-8">
 
-      <div className="max-w-6xl mx-auto">
+            <CategoryCard
+              title="World Rankings"
+              description="Explore the world's best universities."
+              link="/rankings/world"
+            />
 
+            <CategoryCard
+              title="Country Rankings"
+              description="Discover top universities by country."
+              link="/rankings/country"
+            />
 
-      <h2 className="
-      text-3xl
-      font-bold
-      text-blue-900
-      text-center
-      mb-8
-      ">
-      Explore Rankings
-      </h2>
+            <CategoryCard
+              title="Subject Rankings"
+              description="Compare universities across subjects."
+              link="/rankings/subject"
+            />
 
+          </div>
 
-
-      <div className="
-      grid
-      md:grid-cols-3
-      gap-6
-      ">
-
-
-      <CategoryCard
-      title="World Rankings"
-      link="/rankings/world"
-      />
-
-
-      <CategoryCard
-      title="Country Rankings"
-      link="/rankings/country"
-      />
-
-
-      <CategoryCard
-      title="Subject Rankings"
-      link="/rankings/subject"
-      />
-
-
-      </div>
-
-
-      </div>
-
-
+        </div>
       </section>
-
-
-
-
-
-
-
 
       {/* Methodology */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto bg-gradient-to-r from-blue-700 to-indigo-700 rounded-2xl text-white p-12 text-center">
 
-      <section className="
-      py-16
-      px-8
-      ">
+          <h2 className="text-4xl font-bold">
+            TR Rankings Methodology
+          </h2>
 
+          <p className="mt-6 text-lg text-blue-100">
+            Our methodology combines Teaching Excellence, Research Impact,
+            International Outlook and Graduate Employability using a transparent
+            and evidence-based approach.
+          </p>
 
-      <div className="
-      max-w-5xl
-      mx-auto
-      bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600
-      text-white
-      rounded-xl
-      p-10
-      text-center
-      ">
+          <Link
+            href="/methodology"
+            className="inline-block mt-8 bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-400"
+          >
+            View Methodology
+          </Link>
 
+        </div>
+      </section>
+</div>
+ <RightSidebar />
+ </div>
+      {/* CTA */}
+      <section className="bg-blue-900 text-white py-20">
+        <div className="max-w-5xl mx-auto text-center px-6">
 
-      <h2 className="text-3xl font-bold">
-      TRKM Ranking Methodology
-      </h2>
+          <h2 className="text-4xl font-bold">
+            Join the Future of University Rankings
+          </h2>
 
+          <p className="mt-6 text-lg text-blue-100">
+            Explore trusted university rankings, compare institutions and make
+            informed decisions for your higher education journey.
+          </p>
 
-      <p className="mt-4 text-gray-200">
+          <Link
+            href="/rankings/world"
+            className="inline-block mt-8 bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-yellow-400"
+          >
+            View Rankings
+          </Link>
 
-      Our ranking system combines academic excellence,
-      research performance, international diversity and
-      career outcomes.
-
-      </p>
-
-
-      <Link
-      href="/methodology"
-      className="
-      inline-block
-      mt-6
-      bg-yellow-500
-      text-blue-900
-      px-6
-      py-3
-      rounded-lg
-      font-bold
-      "
-      >
-
-      View Methodology
-
-      </Link>
-
-
-      </div>
-
-
+        </div>
       </section>
 
-
     </main>
-
   );
 }
 
-
-
-
-
-
-
-
 function StatCard({
-number,
-title
-}:{
-number:string;
-title:string;
-}){
+  number,
+  title,
+}: {
+  number: string;
+  title: string;
+}) {
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
+      <h3 className="text-4xl font-bold text-blue-900">
+        {number}
+      </h3>
 
-return(
-
-<div className="
-bg-white
-rounded-xl
-shadow
-p-8
-text-center
-">
-
-
-<h3 className="
-text-4xl
-font-bold
-text-blue-900
-">
-
-{number}
-
-</h3>
-
-
-<p className="mt-3 text-gray-600">
-{title}
-</p>
-
-
-</div>
-
-)
-
+      <p className="mt-4 text-gray-600">
+        {title}
+      </p>
+    </div>
+  );
 }
 
-
-
-
-
-
-
 function CategoryCard({
-title,
-link
-}:{
-title:string;
-link:string;
-}){
+  title,
+  description,
+  link,
+}: {
+  title: string;
+  description: string;
+  link: string;
+}) {
+  return (
+    <Link
+      href={link}
+      className="block bg-gray-50 rounded-xl shadow-lg p-8 hover:bg-blue-50 hover:shadow-xl transition"
+    >
+      <h3 className="text-2xl font-bold text-blue-900">
+        {title}
+      </h3>
 
+      <p className="mt-4 text-gray-600">
+        {description}
+      </p>
 
-return(
-
-<Link
-href={link}
-className="
-block
-bg-gray-50
-rounded-xl
-shadow
-p-8
-hover:bg-blue-50
-transition
-"
->
-
-
-<h3 className="
-text-xl
-font-bold
-text-blue-900
-">
-
-{title}
-
-</h3>
-
-
-<p className="mt-3 text-gray-600">
-View rankings →
-</p>
-
-
-</Link>
-
-
-)
-
+      <p className="mt-6 text-blue-700 font-semibold">
+        Explore →
+      </p>
+    </Link>
+  );
 }

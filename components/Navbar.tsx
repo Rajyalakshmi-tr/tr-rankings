@@ -81,7 +81,9 @@ text-gray-700
           <NavLink href="/rankings/world">
             World Rankings
           </NavLink>
-
+<NavLink href="/compare">
+  Compare
+</NavLink>
 
           <NavLink href="/rankings/country">
             Country Rankings

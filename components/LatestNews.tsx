@@ -1,28 +1,5 @@
 import Link from "next/link";
-
-const news = [
-  {
-    id: 1,
-    title: "TR Rankings 2026 Released",
-    date: "July 2026",
-    description:
-      "Explore the latest TR World University Rankings featuring over 1,000 universities worldwide.",
-  },
-  {
-    id: 2,
-    title: "New Research Excellence Indicator",
-    date: "June 2026",
-    description:
-      "TR Rankings introduces an enhanced research assessment methodology for greater transparency.",
-  },
-  {
-    id: 3,
-    title: "Top Emerging Universities",
-    date: "May 2026",
-    description:
-      "Discover universities making remarkable progress in teaching, innovation, and global impact.",
-  },
-];
+import { news } from "@/data/news";
 
 export default function LatestNews() {
   return (
@@ -33,34 +10,30 @@ export default function LatestNews() {
           Latest News
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {news.map((item) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {news.map((article) => (
             <div
-              key={item.id}
-              className="rounded-xl shadow-lg overflow-hidden bg-gray-50 hover:shadow-xl transition"
+              key={article.id}
+              className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition"
             >
-              <div className="h-48 bg-blue-900 flex items-center justify-center text-white text-6xl">
-                📰
-              </div>
+              <p className="text-sm text-gray-500">
+                {article.date}
+              </p>
 
-              <div className="p-6">
-                <p className="text-sm text-gray-500">{item.date}</p>
+              <h3 className="text-2xl font-bold mt-3">
+                {article.title}
+              </h3>
 
-                <h3 className="text-xl font-bold mt-2">
-                  {item.title}
-                </h3>
+              <p className="text-gray-600 mt-4">
+                {article.excerpt}
+              </p>
 
-                <p className="text-gray-600 mt-4">
-                  {item.description}
-                </p>
-
-                <Link
-                  href="/news"
-                  className="inline-block mt-6 text-blue-700 font-semibold hover:underline"
-                >
-                  Read More →
-                </Link>
-              </div>
+              <Link
+                href={`/news/${article.slug}`}
+                className="inline-block mt-6 text-blue-700 font-semibold hover:underline"
+              >
+                Read More →
+              </Link>
             </div>
           ))}
         </div>
