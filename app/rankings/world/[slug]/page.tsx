@@ -1,6 +1,11 @@
 import { universities } from "@/data/universities";
 import Link from "next/link";
 
+export function generateStaticParams() {
+  return universities.map((university) => ({
+    slug: university.slug,
+  }));
+}
 
 export default async function UniversityProfile({
   params,

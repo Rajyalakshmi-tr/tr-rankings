@@ -1,7 +1,13 @@
 import { universities } from "@/data/universities";
 import Link from "next/link";
 import Image from "next/image";
+import { subjects } from "@/data/subjects";
 
+export function generateStaticParams() {
+  return subjects.map((subject) => ({
+    slug: subject.slug,
+  }));
+}
 type Props = {
   params: Promise<{
     slug: string;

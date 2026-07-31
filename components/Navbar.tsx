@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 export default function Navbar() {
 
@@ -113,6 +114,16 @@ text-gray-700
           <NavLink href="/contact">
             Contact
           </NavLink>
+<a
+  href="https://github.com/Rajyalakshmi-tr/tr-rankings"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-2xl text-gray-700 hover:text-blue-700 transition-colors"
+  aria-label="GitHub Repository"
+>
+  <FaGithub />
+</a>
+
 
 
         </div>
@@ -194,8 +205,15 @@ border-t
           <NavLink href="/contact">
             Contact
           </NavLink>
-
-
+          <a
+  href="https://github.com/Rajyalakshmi-tr/tr-rankings"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 text-gray-700 hover:text-blue-700"
+>
+  <FaGithub />
+  GitHub
+</a>
         </div>
 
       )}

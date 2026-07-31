@@ -43,26 +43,32 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="font-bold mb-4">Contact</h3>
+<div>
+  <h3 className="font-bold mb-4">Contact</h3>
 
-            <p>Email:</p>
-            <p>info@trrankings.com</p>
+  <p>Email:</p>
+  <p>trrankings@gmail.com</p>
 
-            <p className="mt-3">
-              Hyderabad, India
-            </p>
-          </div>
+  <p className="mt-3">
+    Hyderabad, India
+  </p>
 
-        </div>
+  <a
+    href="https://github.com/Rajyalakshmi-tr/tr-rankings"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block mt-4 text-blue-400 hover:text-blue-300"
+  >
+    GitHub Repository →
+  </a>
+</div>
 
-        <hr className="my-8 border-gray-700" />
-
-        <p className="text-center text-gray-400">
-          © 2026 TR Rankings. All Rights Reserved.
-        </p>
-
-      </div>
+</div>
+<hr className="my-8 border-gray-700" /> 
+<p className="text-center text-gray-400">
+   © 2026 TR Rankings. All Rights Reserved. 
+  </p> 
+</div>
     </footer>
   );
 }
