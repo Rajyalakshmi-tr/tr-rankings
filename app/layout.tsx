@@ -13,74 +13,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const siteUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://rajyalakshmi-tr.github.io/tr-rankings"
+    : "http://localhost:3000";
 
-metadataBase: new URL("https://rajyalakshmi-tr.github.io/tr-rankings"),
-  title: {
-    default: "TR Rankings | World University Rankings",
-    template: "%s | TR Rankings",
+export const metadata = {
+  metadataBase: new URL(siteUrl),
+
+  title: "TR Rankings | World University Rankings",
+
+  description:
+    "TR Rankings provides transparent global university rankings.",
+
+  openGraph: {
+    title: "TR Rankings",
+    description:
+      "Explore trusted university rankings.",
+    images: ["/og-image.png"],
   },
 
-  description:
-    "TR Rankings provides transparent global university rankings based on teaching excellence, research impact, international outlook and graduate employability.",
-
-
-  keywords: [
-    "TR Rankings",
-    "World University Rankings",
-    "Global University Rankings",
-    "Top Universities",
-    "University Ranking 2026",
-    "Higher Education Rankings",
-    "Teaching Excellence",
-    "Research Impact",
-  ],
-
-
-  authors: [
-    {
-      name: "TR Rankings",
-    },
-  ],
-
-
-  creator: "TR Rankings",
-
-robots: {
-  index: true,
-  follow: true,
-},
-openGraph: {
-
-    title:
-      "TR Rankings | World University Rankings",
-
-    description:
-      "Explore trusted global university rankings, methodology, and higher education insights.",
-
-    type: "website",
-
-    siteName:
-      "TR Rankings",
-
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "TR Rankings World University Rankings",
-      },
-    ],
-
-},
-
-twitter: {
-  card: "summary_large_image",
-  title: "TR Rankings | World University Rankings",
-  description:
-    "Explore trusted global university rankings, methodology, and higher education insights.",
-  images: ["/og-image.png"],
-},
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
 };
 export default function RootLayout({
   children,
