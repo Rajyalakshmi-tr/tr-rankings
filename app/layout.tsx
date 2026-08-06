@@ -15,8 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 
-  metadataBase: new URL("http://localhost:3000"),
-
+metadataBase: new URL("https://rajyalakshmi-tr.github.io/tr-rankings"),
   title: {
     default: "TR Rankings | World University Rankings",
     template: "%s | TR Rankings",

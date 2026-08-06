@@ -40,17 +40,13 @@ justify-between
   href="/"
   className="flex items-center gap-2 mr-8"
 >
-  <Image
-  src="/logos/logo.png"
+  <img
+  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logos/logo.png`}
   alt="TR Rankings Logo"
   width={70}
   height={70}
-  priority
-  style={{
-    width: "70px",
-    height: "70px",
-  }}
   className="rounded-lg"
+  style={{ width: "70px", height: "70px" }}
 />
 
 
