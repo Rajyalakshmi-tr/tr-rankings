@@ -48,8 +48,7 @@ export default function HomePage() {
           >
             Explore World Rankings
           </Link>
-           {/* TR Rankings Image */}
-<div className="mt-12 max-w-5xl mx-auto">
+           <div className="mt-12 max-w-5xl mx-auto">
   <Image
     src="/og-image.png"
     alt="TR Rankings"
