@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import RightSidebar from "@/components/RightSidebar";
 import LatestNews from "@/components/LatestNews";
 import LiveRankingsPreview from "@/components/LiveRankingsPreview";
@@ -47,7 +48,17 @@ export default function HomePage() {
           >
             Explore World Rankings
           </Link>
-
+           {/* TR Rankings Image */}
+<div className="mt-12 max-w-5xl mx-auto">
+  <Image
+    src="/og-image.png"
+    alt="TR Rankings"
+    width={1200}
+    height={630}
+    className="w-full rounded-2xl shadow-lg"
+    priority
+  />
+</div>
         </div>
       </section>
 <LiveRankingsPreview />
