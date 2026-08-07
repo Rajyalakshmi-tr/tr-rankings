@@ -45,6 +45,7 @@ export default function Navbar() {
             width={70}
             height={70}
             className="rounded-lg"
+            style={{ width: "70px", height: "70px" }}
           />
 
           <span className="text-2xl font-bold text-blue-900">
