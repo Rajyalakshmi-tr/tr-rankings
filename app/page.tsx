@@ -48,14 +48,13 @@ export default function HomePage() {
           >
             Explore World Rankings
           </Link>
-           <div className="mt-12 max-w-5xl mx-auto">
-  <Image
+           <div className="mt-12">
+  <img
     src="/tr-rankings/og-image.png"
     alt="TR Rankings"
-    width={1200}
-    height={630}
-    className="w-full rounded-2xl shadow-lg"
-    priority
+    width="1200"
+    height="630"
+    className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg block"
   />
 </div>
         </div>
