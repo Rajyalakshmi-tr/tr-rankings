@@ -50,7 +50,7 @@ export default function HomePage() {
           </Link>
            <div className="mt-12 max-w-5xl mx-auto">
   <Image
-    src="/og-image.png"
+    src="/tr-rankings/og-image.png"
     alt="TR Rankings"
     width={1200}
     height={630}
