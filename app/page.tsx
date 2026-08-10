@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import RightSidebar from "@/components/RightSidebar";
 import LatestNews from "@/components/LatestNews";
 import LiveRankingsPreview from "@/components/LiveRankingsPreview";
@@ -42,21 +41,13 @@ export default function HomePage() {
             </span>
           </div>
 
-          <Link
-            href="/rankings/world"
-            className="inline-block mt-10 bg-yellow-500 text-blue-900 font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition"
-          >
-            Explore World Rankings
-          </Link>
-           <div className="mt-12">
-  <img
-    src="/tr-rankings/og-image.png"
-    alt="TR Rankings"
-    width="1200"
-    height="630"
-    className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg block"
-  />
-</div>
+ <Link
+  href="/rankings/world"
+  className="inline-block mt-10 bg-yellow-500 text-blue-900 font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition"
+>
+  Explore World Rankings
+</Link>
+
         </div>
       </section>
 <LiveRankingsPreview />
