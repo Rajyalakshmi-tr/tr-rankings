@@ -40,15 +40,14 @@ export default function Navbar() {
           className="flex items-center gap-2 mr-8"
         >
           <Image
-            src="/logos/logo.png"
+            src="/tr-rankings/logos/logo.png"
             alt="TR Rankings Logo"
-            width={70}
-            height={70}
-            className="rounded-lg"
-            style={{ width: "70px", height: "70px" }}
-          />
-
-          <span className="text-2xl font-bold text-blue-900">
+            width={60}
+            height={60}
+            className="object-contain"
+            priority
+            />      
+            <span className="text-2xl font-bold text-blue-900">
             TR<span className="text-yellow-700">Rankings</span>
           </span>
         </Link>
