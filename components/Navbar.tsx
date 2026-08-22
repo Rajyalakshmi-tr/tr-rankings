@@ -9,46 +9,25 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav
-      className="
-        fixed
-        top-0
-        left-0
-        right-0
-        bg-white/95
-        backdrop-blur-md
-        shadow-lg
-        border-b
-        z-50
-      "
-    >
-      <div
-        className="
-          max-w-full
-          mx-auto
-          px-6
-          lg:px-8
-          py-4
-          flex
-          items-center
-          justify-between
-        "
-      >
+    <nav className="bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 mr-8"
+          className="flex items-center gap-3"
+          onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/tr-rankings/logos/logo.png"
-            alt="TR Rankings Logo"
-            width={60}
-            height={60}
+            src="/og_image.png"
+            alt="TR Rankings"
+            width={45}
+            height={45}
             className="object-contain"
-            priority
-            />      
-            <span className="text-2xl font-bold text-blue-900">
-            TR<span className="text-yellow-700">Rankings</span>
+          />
+
+          <span className="text-xl font-bold text-blue-900">
+            TRRankings
           </span>
         </Link>
 
@@ -70,18 +49,6 @@ export default function Navbar() {
             World Rankings
           </NavLink>
 
-          <NavLink href="/compare">
-            Compare
-          </NavLink>
-
-          <NavLink href="/rankings/country">
-            Country Rankings
-          </NavLink>
-
-          <NavLink href="/rankings/subject">
-            Subject Rankings
-          </NavLink>
-
           <NavLink href="/methodology">
             Methodology
           </NavLink>
@@ -98,11 +65,17 @@ export default function Navbar() {
             Contact
           </NavLink>
 
+          {/* GitHub Icon */}
           <a
             href="https://github.com/Rajyalakshmi-tr/tr-rankings"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-gray-700 hover:text-blue-700 transition-colors"
+            className="
+              text-2xl
+              text-gray-700
+              hover:text-blue-700
+              transition-colors
+            "
             aria-label="GitHub Repository"
           >
             <FaGithub />
@@ -131,45 +104,52 @@ export default function Navbar() {
             lg:hidden
             px-6
             pb-6
+            pt-2
             space-y-5
             bg-white
             border-t
           "
         >
-          <NavLink href="/">Home</NavLink>
+          <NavLink href="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </NavLink>
 
-          <NavLink href="/rankings/world">
+          <NavLink
+            href="/rankings/world"
+            onClick={() => setMenuOpen(false)}
+          >
             World Rankings
           </NavLink>
 
-          <NavLink href="/compare">
-            Compare
-          </NavLink>
-
-          <NavLink href="/rankings/country">
-            Country Rankings
-          </NavLink>
-
-          <NavLink href="/rankings/subject">
-            Subject Rankings
-          </NavLink>
-
-          <NavLink href="/methodology">
+          <NavLink
+            href="/methodology"
+            onClick={() => setMenuOpen(false)}
+          >
             Methodology
           </NavLink>
 
-          <NavLink href="/news">
+          <NavLink
+            href="/news"
+            onClick={() => setMenuOpen(false)}
+          >
             News
           </NavLink>
 
-          <NavLink href="/about">
+          <NavLink
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </NavLink>
 
-          <NavLink href="/contact">
+          <NavLink
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+          >
             Contact
           </NavLink>
 
+          {/* GitHub */}
           <a
             href="https://github.com/Rajyalakshmi-tr/tr-rankings"
             target="_blank"
@@ -182,7 +162,7 @@ export default function Navbar() {
               hover:text-blue-700
             "
           >
-            <FaGithub />
+            <FaGithub className="text-xl" />
             GitHub
           </a>
         </div>
@@ -194,19 +174,18 @@ export default function Navbar() {
 function NavLink({
   href,
   children,
+  onClick,
 }: {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="
-        px-2
-        py-1
-        text-[15px]
-        font-medium
-        text-gray-700
+        block
         hover:text-blue-700
         transition-colors
       "
