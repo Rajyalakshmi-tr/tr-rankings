@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,7 +19,7 @@ const siteUrl =
     ? "https://rajyalakshmi-tr.github.io/tr-rankings"
     : "http://localhost:3000";
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: "TR Rankings | World University Rankings",
@@ -28,16 +29,28 @@ export const metadata = {
 
   openGraph: {
     title: "TR Rankings",
-    description:
-      "Explore trusted university rankings.",
-    images: ["/og-image.png"],
+    description: "Explore trusted university rankings.",
+    url: siteUrl,
+    siteName: "TR Rankings",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TR Rankings - World University Rankings",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
+    title: "TR Rankings",
+    description: "Explore trusted university rankings.",
     images: ["/og-image.png"],
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,15 +61,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-<body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-  <Navbar />
-
-  <main className="pt-20 flex-1">
-    {children}
-  </main>
-
-  <Footer />
-</body>
+      <body className="min-h-full">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
