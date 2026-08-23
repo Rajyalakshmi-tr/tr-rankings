@@ -19,7 +19,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/og_image.png"
+            src="/tr-rankings/og_image.png"
             alt="TR Rankings"
             width={45}
             height={45}

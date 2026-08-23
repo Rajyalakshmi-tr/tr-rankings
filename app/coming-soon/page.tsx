@@ -9,7 +9,7 @@ export default function ComingSoonPage() {
         {/* Logo / Brand */}
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            TR <span className="text-[#F5B800]">Rankings</span>
+            TR <span className="text-[#F5B800]">World University Rankings - 2027</span>
           </h1>
         </div>
 
