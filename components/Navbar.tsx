@@ -18,15 +18,13 @@ export default function Navbar() {
           className="flex items-center gap-3"
           onClick={() => setMenuOpen(false)}
         >
-          <Image
-            src="/og-image.png"
-            alt="TR Rankings"
-            width={45}
-            height={45}
-            priority
-            className="object-contain"
-          />
-
+          <img
+  src="/tr-rankings/og-image.png"
+  alt="TR Rankings"
+  width="45"
+  height="45"
+  className="object-contain"
+/>
           <span className="text-xl font-bold text-blue-900">
             TRRankings
           </span>

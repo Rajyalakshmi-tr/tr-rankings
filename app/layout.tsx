@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const siteUrl =
   process.env.NODE_ENV === "production"
     ? "https://rajyalakshmi-tr.github.io/tr-rankings"
-    : "http://localhost:3000";
+    : "http://localhost:3000/tr-rankings";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -33,12 +33,13 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "TR Rankings",
     type: "website",
+
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "TR Rankings - World University Rankings",
+        alt: "TR Rankings",
       },
     ],
   },
@@ -61,9 +62,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">
+      <body>
         <Navbar />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
