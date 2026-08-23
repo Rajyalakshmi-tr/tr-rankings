@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #061a3a;
+  --blue: #0b4aa2;
+  --gold: #f5b800;
+  --white: #ffffff;
+  --muted: #b8c7dc;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(11, 74, 162, 0.42), transparent 32%),
+    radial-gradient(circle at 85% 80%, rgba(245, 184, 0, 0.13), transparent 28%),
+    linear-gradient(135deg, #031027 0%, #061a3a 52%, #092b5f 100%);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: min(900px, 100%);
+  padding: 58px 58px 50px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  background: rgba(3, 16, 39, 0.62);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 58px;
+  text-align: left;
+}
+
+.logo-mark {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--navy);
+  background: linear-gradient(135deg, #ffffff 0%, #f5b800 100%);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  box-shadow: 0 8px 24px rgba(245, 184, 0, 0.2);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-size: clamp(56px, 9vw, 104px);
+  line-height: 0.95;
+  letter-spacing: -5px;
+  font-weight: 900;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.description {
+  max-width: 610px;
+  margin: 25px auto 30px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.launch {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 32px;
+  padding: 13px 25px;
+  border: 1px solid rgba(245, 184, 0, 0.35);
+  border-radius: 12px;
+  background: rgba(245, 184, 0, 0.08);
+}
+
+.launch span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.launch strong {
+  color: var(--white);
+  font-size: 20px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 620px;
+  margin: 0 auto 35px;
+}
+
+.time-box {
+  padding: 19px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.time-box strong {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.time-box span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-note {
+  color: #8fa4c1;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 22px;
+  color: #7389a6;
+  font-size: 11px;
+}
+
+.glow {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+}
+
+.glow-one {
+  top: -160px;
+  left: -100px;
+  background: #0b4aa2;
+}
+
+.glow-two {
+  right: -120px;
+  bottom: -150px;
+  background: #f5b800;
+}
+
+@media (max-width: 650px) {
+  .page {
+    padding: 18px 14px;
+  }
+
+  .card {
+    padding: 38px 20px 34px;
+    border-radius: 22px;
+  }
+
+  .brand {
+    margin-bottom: 45px;
+  }
+
+  .logo-mark {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: clamp(52px, 17vw, 78px);
+    letter-spacing: -3px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .countdown {
+    gap: 7px;
+  }
+
+  .time-box {
+    padding: 14px 5px;
+  }
+
+  .time-box strong {
+    font-size: 25px;
+  }
+
+  .time-box span {
+    font-size: 9px;
+  }
+}
